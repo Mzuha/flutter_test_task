@@ -9,42 +9,34 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   ButtonStyle _buttonStyle = ElevatedButton.styleFrom(
-      padding: EdgeInsets.all(20),
-      primary: Colors.black
-  );
+      padding: EdgeInsets.all(20), primary: Colors.black);
 
-  TextStyle _textStyle = TextStyle(
-      fontSize: 15,
-      fontWeight: FontWeight.bold
-  );
+  TextStyle _textStyle = TextStyle(fontSize: 15, fontWeight: FontWeight.bold);
 
   void _openMenu() {
     Navigator.of(context)
         .push(MaterialPageRoute(builder: (BuildContext context) {
       return Scaffold(
-        appBar: AppBar(title: Text('Menu')),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+          appBar: AppBar(title: Text('Menu')),
+          body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Padding(padding: EdgeInsets.only(top: 5)),
-            Row(
-              children: [
-                Padding(padding: EdgeInsets.only(left: 5)),
-                ElevatedButton(
-                  child: Text('To Colours!'),
-                  style: _buttonStyle,
-                  onPressed: () {
-                    Navigator.pop(context);
-                    Navigator.pushNamed(context, '/colours');
-                  },
-                ),
-                Padding(padding: EdgeInsets.only(left: 20)),
-                Text('Page with random generated colours!', style: _textStyle,)
-              ]
-            )
-          ]
-        )
-      );
+            Row(children: [
+              Padding(padding: EdgeInsets.only(left: 5)),
+              ElevatedButton(
+                child: Text('To Colours!'),
+                style: _buttonStyle,
+                onPressed: () {
+                  Navigator.pop(context);
+                  Navigator.pushNamed(context, '/colours');
+                },
+              ),
+              Padding(padding: EdgeInsets.only(left: 20)),
+              Text(
+                'Page with random generated colours!',
+                style: _textStyle,
+              )
+            ])
+          ]));
     }));
   }
 
@@ -59,14 +51,9 @@ class _MainPageState extends State<MainPage> {
       body: Center(
         child: Column(
           children: [
-            Text(
-              'This is mane page.',
-              style: _textStyle,
-            ),
-            Text(
-              ' The menu can be opened from top right corner',
-              style: _textStyle,
-            ),
+            Text('This is mane page.', style: _textStyle),
+            Text('The menu can be opened from top right corner',
+                style: _textStyle)
           ],
         ),
       ),

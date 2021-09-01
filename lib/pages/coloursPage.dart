@@ -12,24 +12,13 @@ class _ColoursPageState extends State<ColoursPage> {
   Random _random = Random();
 
   TextStyle _textStyle = TextStyle(
-      fontSize: 40,
-      color: Colors.black,
-      decoration: TextDecoration.none
-  );
+      fontSize: 40, color: Colors.black, decoration: TextDecoration.none);
 
-  Color _color = Color.fromARGB(255,
-      255,
-      255,
-      255
-  );
+  Color _color = Color.fromARGB(255, 255, 255, 255);
 
   Color getRandomRGBColor() {
     return Color.fromARGB(
-        255,
-        _random.nextInt(256),
-        _random.nextInt(256),
-        _random.nextInt(256)
-    );
+        255, _random.nextInt(256), _random.nextInt(256), _random.nextInt(256));
   }
 
   @override
@@ -39,8 +28,7 @@ class _ColoursPageState extends State<ColoursPage> {
             backgroundColor: _color,
             body: Center(
               child: Text('Hey there!', style: _textStyle),
-            )
-        ),
+            )),
         onTap: () {
           setState(() {
             _color = getRandomRGBColor();
